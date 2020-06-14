@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Invoice</title>
+  <link rel="stylesheet" href="Invoice.css">
+  <script src="Invoice.js" defer></script>
+</head>
+<body>
+  <div class="header">INVOICE</div>
+  
+  <div class="vendor-address" contenteditable>
+    <p>Jack Vendor</p>
+    <p>900 Business St.</p>
+    <p>Dallas, TX 56789</p>
+    <p><br></p>
+    <p>Email: jvendor@busymail.com</p>			
+    <p>Phone: (765)432-1098</p>
+  </div>
+  
+  <div class="vendor-logo">
+    <label title="click to change logo" for="logo-input">
+      <img id="logo" alt="Add logo" src="briefcase.svg">
+    </label>
+    <input type="file" id="logo-input" accept="image/*">
+  </div>
+  
+  <div class="customer" contenteditable>BuyCorp, LLC</div>
+  
+  <table class="summary">
+    <tbody>
+      <tr>
+        <th>Invoice #</th>
+        <td contenteditable>000123</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td id="date" contenteditable></td>
+      </tr>
+      <tr>
+        <th>Amount Due</th>
+        <td class="due">$0.00</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table class="line-items">
+    <thead>
+      <tr>
+        <th contenteditable>Item</th>
+        <th contenteditable>Description</th>
+        <th contenteditable>Rate</th>
+        <th contenteditable>Quantity</th>
+        <th contenteditable>Price</th>
+      </tr>
+    </thead>
+    <tbody>      
+    </tbody>
+    <template id="new-row">
+      <tr>
+        <td class="line-item-name">
+            <a class="cut">❌</a>
+            <div contenteditable>item</div>            
+        </td>      
+        <td contenteditable>description</td>
+        <td class="rate" contenteditable>rate</td>
+        <td class="quantity" contenteditable>quantity</td>
+        <td class="price" contenteditable>price</td>
+        </tr>
+    </template> 
+  </table>
+  
+  <div class="add">New Item</div>
+  
+  <table class="totals">
+    <tr>
+      <th>Subtotal</th>
+      <td id="subtotal">$0.00</td>
+    </tr>
+    <tr>
+      <th>Unpaid Balance</th>
+      <td id="unpaid" contenteditable>$0.00</td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <td id="total">$0.00</td>
+    </tr>
+    <tr>
+      <th>Amount Paid</th>
+      <td id="paid" contenteditable>$0.00</td>
+    </tr>
+    <tr>
+      <th>Balance Due</th>
+      <td class="due">$0.00</td>
+    </tr>
+  </table>
+  
+  <div class="terms">
+    <h1 contenteditable>terms</h1>
+    <div contenteditable>
+      <p>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</p>
+    </div>
+  </div>
+</body>
